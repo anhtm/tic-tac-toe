@@ -81,9 +81,6 @@ class TicTacToe {
 
 var board = new TicTacToe();
 var blankBoard = board.getBlankBoard();
-var count = board.turn;
-var newGame = board.resetGame(); // use this to reset a new game after the previous one has ended.
-
 
 // Converts board array to table in HTML
 function makeTableHTML(array) {
@@ -101,52 +98,59 @@ function makeTableHTML(array) {
 }
 
 
-// Asks user for moves
-function preparePlay() {
-  var playButton = document.getElementById("play");
-  playButton.onclick = function() {
-    var answer = prompt("Enter your move (x plays first):", "xy");
-    var x = parseInt(answer[0], 10);
-    var y = parseInt(answer[1], 10);
+// Functionalities when a cell is clicked
 
-    // Gets the result from prompt and calls play method
-    board.play(x, y);
-    count++;
-    // Send the result to table
-    var target = document.getElementById(answer);
-    if (count % 2 === 1) {
-        target.innerHTML = "x";
-    } else if (count % 2 === 0) {
-        target.innerHTML = "o";
-    }
-    endGame();
-    return board;
-  };
+function clickCell() {
+    $(".cell").click(function() {
+        var id = $(this).attr('id');
+        //console.log(typeof id);
+        var x = id[0];
+        var y = id[1];
+        board.play(parseInt(x), parseInt(y));
+        if (board.turn % 2 === 1) {
+            $(this).html("<h3>x</h3>"); 
+        } else if (board.turn % 2 === 0) {
+            $(this).html("<h3>o</h3>"); 
+        }
+        setTimeout(endGame(), 2000);
+    })
 }
 
 
 // Alerts winner and game state
-// TODO: reset the game after winner alert
+
 function endGame() {
-	if (count >= 5 && board.hasEnded() === "x") {
+	if (board.turn >= 5 && board.hasEnded() === "x") {
   	alert("x won!");
-  } else if (count >= 6 && board.hasEnded() === "o") {
+  	reset();
+  } else if (board.turn >= 6 && board.hasEnded() === "o") {
   	alert("o won!");
-  } else if (count === 9) {
+  	reset();
+  } else if (board.turn === 9) {
     alert("Draw!");
+    reset();
   }
 }
 
+
 function resetButton() {
-        board.resetGame();
         $("#reset").click(function(){
-        document.location.reload();
+            reset();
         });
     }
 
 
-window.onload = function() {
+function reset() {
+    $("h3").empty();
+    board.resetGame();
+}
+
+
+$(document).ready(function() {
   makeTableHTML(blankBoard);
-  preparePlay();
+  clickCell();
   resetButton();
-};
+});
+
+
+//TODO: alert after the last move is drawn

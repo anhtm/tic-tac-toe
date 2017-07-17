@@ -11,14 +11,18 @@ body {
      flex-direction: column;
      background-color: #F06543;
      overflow: hidden;
+     
 }
 
-tr .cell {
-    max-width: 90px;
-    max-height: 90px;
+tr td {
+    width: 90px;
+    height: 90px;
+    min-height: 90px;
     font-size: 36px;
     background-color: white;
     border-radius: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 h1 {
@@ -33,6 +37,7 @@ table {
     border: 2px;
     background-color: #F06543;
     border-radius: 20px;
+    table-layout: fixed;
 }
 
 

@@ -112,7 +112,8 @@ function clickCell() {
         } else if (board.turn % 2 === 0) {
             $(this).html("<h3>o</h3>"); 
         }
-        setTimeout(endGame(), 2000);
+        setTimeout(function() {
+            endGame();}, 1700);
     })
 }
 
@@ -152,5 +153,4 @@ $(document).ready(function() {
   resetButton();
 });
 
-
-//TODO: alert after the last move is drawn
+//TODO: set td element fixed height, prevent from flooding

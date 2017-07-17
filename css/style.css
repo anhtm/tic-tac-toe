@@ -1,0 +1,58 @@
+tr .cell {
+    width: 70px;
+    height: 70px;
+    font-size: 36px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+h1 {
+    margin: 30px;
+    font-size: 42px;
+    color: white;
+}
+
+table {
+    width: 450px;
+    height: 450px;
+    border: 2px;
+    background-color: #F06543;
+    border-radius: 20px;
+}
+
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     background-color: #F06543;
+     overflow: hidden;
+}
+
+button {
+    display: inline-block;
+    width: 60px;
+    height: 1.5rem;
+    border: none;
+    border-radius: 3px;
+}
+
+
+.x {
+    
+}
+
+.o {
+    
+}
+
+.hidden {
+    
+}

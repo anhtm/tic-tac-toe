@@ -108,9 +108,9 @@ function clickCell() {
         var y = id[1];
         board.play(parseInt(x), parseInt(y));
         if (board.turn % 2 === 1) {
-            $(this).html("<h3>x</h3>"); 
+            $(this).html('<p class="move">x</p>'); 
         } else if (board.turn % 2 === 0) {
-            $(this).html("<h3>o</h3>"); 
+            $(this).html('<p class="move">o</p>'); 
         }
         setTimeout(function() {
             endGame();}, 1700);
@@ -142,7 +142,7 @@ function resetButton() {
 
 
 function reset() {
-    $("h3").empty();
+    $(".move").empty();
     board.resetGame();
 }
 

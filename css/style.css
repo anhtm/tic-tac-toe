@@ -8,51 +8,44 @@ body {
      display: flex;
      justify-content: center;
      align-items: center;
-     flex-direction: column;
      background-color: #F06543;
-     overflow: hidden;
-     
+     overflow: hidden;  
 }
 
 td {
-    width: 90px;
-    height: 90px;
-    min-height: 90px;
-    font-size: 36px;
+    width: 200px;
+    height: 200px;
+    min-height: 160px;
+    font-size: 4rem;
     background-color: white;
     border-radius: 5px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 h1 {
-    margin: 30px;
-    font-size: 48px;
+    margin: 3rem;
+    font-size: 4rem;
     color: white;
 }
 
 table {
-    width: 450px;
-    height: 450px;
-    border: 2px;
+    width: 600px;
+    height: 600px;
     background-color: #F06543;
-    border-radius: 20px;
     table-layout: fixed;
+    margin: auto;
 }
 
 
 #reset {
     display: inline-block;
-    width: 40px;
-    height: 2rem;
     border: none;
     background-color: #F06543;
+    margin-bottom: 3rem;
 }
 
 .move {
-    text-align: center;
-    font: 2.5rem;
-    position: inherit;
-    
+    text-align:center;
 }
+
+
 

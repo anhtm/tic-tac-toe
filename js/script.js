@@ -153,4 +153,3 @@ $(document).ready(function() {
   resetButton();
 });
 
-//TODO: set td element fixed height, prevent from flooding
